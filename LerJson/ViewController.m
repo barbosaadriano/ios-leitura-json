@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController
-
+@synthesize tabela, listaDados, listaImagens;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +23,8 @@
     NSError *erro;
     @try {
         NSURL *url = [NSURL URLWithString:@"http://www.marcosdiasvendramini.com.br/Get/Estereogramas.aspx"];
+        NSData *dados = [NSData dataWithContentsOfURL:url];
+        
     }
     @catch (NSException *exception) {
         
