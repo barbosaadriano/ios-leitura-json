@@ -19,6 +19,19 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)carregarDados {
+    NSError *erro;
+    @try {
+        NSURL *url = [NSURL URLWithString:@"http://www.marcosdiasvendramini.com.br/Get/Estereogramas.aspx"];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+        
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
