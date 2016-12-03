@@ -24,7 +24,11 @@
     @try {
         NSURL *url = [NSURL URLWithString:@"http://www.marcosdiasvendramini.com.br/Get/Estereogramas.aspx"];
         NSData *dados = [NSData dataWithContentsOfURL:url];
-        
+        listaDados = [NSJSONSerialization JSONObjectWithData:dados options:kNilOptions error:&erro];
+        for (int cont = 0; cont < listaDados.count; cont++) {
+            [listaImagens addObject:[UIImage imageNamed:@"imagem.png"]];
+        }
+        [tabela reloadData];
     }
     @catch (NSException *exception) {
         
