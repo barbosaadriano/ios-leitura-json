@@ -59,8 +59,21 @@
         if (
             ([[dados objectForKey:@"img"] isEqualToString:@""] == false)
             &&
-            ([[listaImagens objectAtIndex:indexPath.row] isEqual:[UIImage imageNamed:@"image.png"]])) {
-            
+            ([[listaImagens objectAtIndex:indexPath.row] isEqual:[UIImage imageNamed:@"imagem.png"]])) {
+            NSString *urlImagem = [NSString stringWithFormat:@"http://www.marcosdiasvendramini.com.br/imgEstereograma/m%@",[dados objectForKey:@"img"]];
+            dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
+            dispatch_async(downloadQueue, ^{
+                NSData *dataImg = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlImagem]];
+                UIImage *imagem = [UIImage imageWithData:dataImg];
+                if (imagem) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [listaImagens replaceObjectAtIndex:indexPath.row withObject:imagem];
+                        celula.imageView.image  = imagem;
+                        celula.imageView.contentMode = UIViewContentModeScaleAspectFit ;
+                        [celula setNeedsLayout];
+                    });
+                }
+            });
         }
     }
     
