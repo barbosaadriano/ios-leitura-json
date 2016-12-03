@@ -16,7 +16,8 @@
 @synthesize tabela, listaDados, listaImagens;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    listaImagens = [[NSMutableArray alloc] init];
+    [self performSelector:@selector(carregarDados) withObject:nil];
 }
 
 -(void)carregarDados {
@@ -38,6 +39,33 @@
     }
 }
 
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return listaDados.count;
+}
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *celula = [tableView   dequeueReusableCellWithIdentifier:@"Celula"];
+    if  (celula == nil) {
+        celula = [[UITableViewCell  alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Celula"];
+    }
+    if ([listaDados objectAtIndex:indexPath.row]!= nil) {
+        NSDictionary *dados = [listaDados objectAtIndex:indexPath.row];
+        celula.textLabel.text = [dados objectForKey:@"nome"];
+        celula.imageView.image = [listaImagens objectAtIndex:indexPath.row];
+        celula.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        if (
+            ([[dados objectForKey:@"img"] isEqualToString:@""] == false)
+            &&
+            ([[listaImagens objectAtIndex:indexPath.row] isEqual:[UIImage imageNamed:@"image.png"]])) {
+            
+        }
+    }
+    
+    return celula;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
