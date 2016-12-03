@@ -14,6 +14,7 @@
 		032E98701DF2D14D004CB680 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032E986F1DF2D14D004CB680 /* Images.xcassets */; };
 		032E98731DF2D14D004CB680 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032E98711DF2D14D004CB680 /* LaunchScreen.xib */; };
 		032E987F1DF2D14D004CB680 /* LerJsonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 032E987E1DF2D14D004CB680 /* LerJsonTests.m */; };
+		034235241DF2D946006E47EF /* imagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 034235231DF2D946006E47EF /* imagem.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		032E98781DF2D14D004CB680 /* LerJsonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LerJsonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		032E987D1DF2D14D004CB680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		032E987E1DF2D14D004CB680 /* LerJsonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LerJsonTests.m; sourceTree = "<group>"; };
+		034235231DF2D946006E47EF /* imagem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagem.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		032E98561DF2D14D004CB680 = {
 			isa = PBXGroup;
 			children = (
+				034235201DF2D8A4006E47EF /* imagens */,
 				032E98611DF2D14D004CB680 /* LerJson */,
 				032E987B1DF2D14D004CB680 /* LerJsonTests */,
 				032E98601DF2D14D004CB680 /* Products */,
@@ -117,6 +120,14 @@
 				032E987D1DF2D14D004CB680 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		034235201DF2D8A4006E47EF /* imagens */ = {
+			isa = PBXGroup;
+			children = (
+				034235231DF2D946006E47EF /* imagem.png */,
+			);
+			name = imagens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				032E986E1DF2D14D004CB680 /* Main.storyboard in Resources */,
+				034235241DF2D946006E47EF /* imagem.png in Resources */,
 				032E98731DF2D14D004CB680 /* LaunchScreen.xib in Resources */,
 				032E98701DF2D14D004CB680 /* Images.xcassets in Resources */,
 			);
@@ -418,6 +430,7 @@
 				032E98841DF2D14D004CB680 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		032E98851DF2D14D004CB680 /* Build configuration list for PBXNativeTarget "LerJsonTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +439,7 @@
 				032E98871DF2D14D004CB680 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
